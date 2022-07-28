@@ -8,8 +8,7 @@ WORKDIR /deploy
 RUN git clone https://github.com/sakaiproject/sakai.git
 WORKDIR /deploy/sakai
 RUN git checkout ${release}
-RUN sed -i 's|<!--  import resource="unboundid-ldap\.xml" / -->|<import resource="unboundid-ldap\.xml"/>|g' providers/component/src/weba
-pp/WEB-INF/components.xml 
+RUN sed -i 's|<!--  import resource="unboundid-ldap\.xml" / -->|<import resource="unboundid-ldap\.xml"/>|g' providers/component/src/webapp/WEB-INF/components.xml
 RUN mvn clean install sakai:deploy -Dmaven.test.skip=true
 
 
@@ -27,8 +26,7 @@ ENV CATALINA_OPTS_MEMORY -Xms2000m -Xmx2000m
 ENV CATALINA_OPTS \
 -server \
 -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseConcMarkSweepGC -XX:+UseParNewGC \
--XX:+CMSParallelRemarkEnabled -XX:+UseCompressedOops -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=80 -XX:Target
-SurvivorRatio=90 \
+-XX:+CMSParallelRemarkEnabled -XX:+UseCompressedOops -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=80 -XX:Target SurvivorRatio=90 \
 -Djava.awt.headless=true \
 -Dsun.net.inetaddr.ttl=0 \
 -Dsakai.component.shutdownonerror=true \
@@ -44,8 +42,7 @@ SurvivorRatio=90 \
 
 RUN sed -i '/^common.loader\=/ s/$/,"\$\{catalina.base\}\/sakai-lib\/*.jar"/' /usr/local/tomcat/conf/catalina.properties
 
-RUN curl -L -o /usr/local/tomcat/lib/mysql-connector-java-5.1.47.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.47/my
-sql-connector-java-5.1.47.jar
+RUN curl -L -o /usr/local/tomcat/lib/mysql-connector-java-4.1.47.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar
 
 RUN mkdir -p /usr/local/tomcat/sakai
 COPY lib/entrypoint.sh /entrypoint.sh
