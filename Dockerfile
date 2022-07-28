@@ -25,8 +25,7 @@ RUN mkdir -p /usr/local/sakai/properties
 ENV CATALINA_OPTS_MEMORY -Xms2000m -Xmx2000m
 ENV CATALINA_OPTS \
 -server \
--verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseConcMarkSweepGC -XX:+UseParNewGC \
--XX:+CMSParallelRemarkEnabled -XX:+UseCompressedOops -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=80 -XX:Target SurvivorRatio=90 \
+-verbose:gc -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC \
 -Djava.awt.headless=true \
 -Dsun.net.inetaddr.ttl=0 \
 -Dsakai.component.shutdownonerror=true \
