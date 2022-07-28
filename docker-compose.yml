@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   sakai:
-    image: sakai
+    image: udl/sakai
     ports:
       - "8080:8080"
     configs:
