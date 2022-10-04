@@ -11,11 +11,12 @@ services:
       - LDAP_USERS=user01,user02
       - LDAP_PASSWORDS=password1,password2
       - LDAP_ENABLE_TLS=yes
-      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/server.pem \
-      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/server.pem \
-      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/server.pem \
-    volumes:
-      - 'certs:/opt/bitnami/openldap/certs'
+      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/server.pem
+      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/server.pem
+      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/server.pem
+    configs:
+      - source: ldap_cert
+        target: /opt/bitnami/openldap/certs/server.pem
       
   sakai:
     image: udl/sakai
@@ -43,6 +44,5 @@ secrets:
 configs:
   sakai_config:
     file: ./config/sakai.properties
-    
-volumes:
-  certs:
+  ldap_cert:
+    file: ./certs/server.pem
