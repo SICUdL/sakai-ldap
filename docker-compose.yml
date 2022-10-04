@@ -43,3 +43,6 @@ secrets:
 configs:
   sakai_config:
     file: ./config/sakai.properties
+    
+volumes:
+  certs:
