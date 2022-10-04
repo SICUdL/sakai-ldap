@@ -14,6 +14,7 @@ RUN mvn clean install sakai:deploy -Dmaven.test.skip=true
 
 FROM tomcat:9.0.20-jre11
 
+COPY certs/server.der /usr/local/tomcat/server.der
 COPY lib/server.xml /usr/local/tomcat/conf/server.xml
 COPY lib/context.xml /usr/local/tomcat/conf/context.xml
 COPY --from=build /deploy/components /usr/local/tomcat/components/
@@ -43,6 +44,7 @@ RUN sed -i '/^common.loader\=/ s/$/,"\$\{catalina.base\}\/sakai-lib\/*.jar"/' /u
 
 RUN curl -L -o /usr/local/tomcat/lib/mysql-connector-java-4.1.47.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar
 
+RUN keytool -import -trustcacerts -cacerts -storepass changeit -noprompt -file /usr/local/tomcat/server.der
 RUN mkdir -p /usr/local/tomcat/sakai
 COPY lib/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
