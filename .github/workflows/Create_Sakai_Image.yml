@@ -47,5 +47,7 @@ jobs:
         with:
           context: "{{defaultContext}}:./"
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: 
+            ${{ steps.meta.outputs.tags }}
+            ghcr.io/sicudl/sakai-ldap:main
           labels: ${{ steps.meta.outputs.labels }}
