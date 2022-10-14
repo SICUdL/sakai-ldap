@@ -49,5 +49,5 @@ jobs:
           push: true
           tags: 
             ${{ steps.meta.outputs.tags }}
-            ghcr.io/sicudl/sakai-ldap:main
+            ghcr.io/sicudl/sakai:main
           labels: ${{ steps.meta.outputs.labels }}
