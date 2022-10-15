@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/sakai-ldap
+  IMAGE_NAME: ${{ github.repository }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -41,5 +41,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: | 
-            ghcr.io/sicudl/sakai-ldap:main
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
