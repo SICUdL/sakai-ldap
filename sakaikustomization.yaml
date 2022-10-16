@@ -1,0 +1,293 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: ldapdir
+      name: ldapdir
+    spec:
+      ports:
+        - name: "1636"
+          port: 1636
+          targetPort: 1636
+      selector:
+        io.kompose.service: ldapdir
+    status:
+      loadBalancer: {}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sakai
+      name: sakai
+    spec:
+      ports:
+        - name: "8080"
+          port: 8080
+          targetPort: 8080
+      selector:
+        io.kompose.service: sakai
+      type: LoadBalancer
+    status:
+      loadBalancer: {}
+  - apiVersion: v1
+    data:
+      security.properties: IyBDb25maWd1cmF0aW9uIGZvciB0aGUgZXhhbXBsZSBkYXRhYmFzZQojIyMjCnVzZXJuYW1lQGphdmF4LnNxbC5CYXNlRGF0YVNvdXJjZT1zYWthaQpwYXNzd29yZEBqYXZheC5zcWwuQmFzZURhdGFTb3VyY2U9ZXhhbXBsZXBhc3N3b3JkCgojIFJ1YnJpY3Mgc2VjcmV0IHRva2VuCiMjIyMgIApydWJyaWNzLmludGVncmF0aW9uLnRva2VuLXNlY3JldD0xMjM0NTY3ODkwMDkwOTA5MTIzNAo=
+    kind: Secret
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: security.properties
+      name: security-properties-secret
+    type: Opaque
+  - apiVersion: v1
+    data:
+      server.pem: |
+        -----BEGIN PRIVATE KEY-----
+        MIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQCSEvZBkMNQ7FPv
+        /RGFhFzIfL9t1DyfvR/7B5kZMbaeMwKu+tZCjDmkgTqEtHUdAGbzYt4Ua+Cy0I8O
+        wadc5KXr/EzPPDUGrr0rCmsaFZD3rkEogiu6SSxZI7MZPV9xeYrw4anJc655IW1x
+        OprUzujpR3olWOFBOxALVjc5C9qrj+HEAvwZMdSI1QuSIEUa1KNN/taxRxpI4L1p
+        3A+aGnaZmwTo+8aom2ECeNn0VNWmEO6TCIovv4g2Is8vCSE7YKpsAEhggSe+JC0D
+        D/RcjO1BwNtNN/ChLsHoyut7CbTUgDFoaqEUoJevNQUhbOgdnlstePAGXgeiJUU2
+        OIuUNBx/AgMBAAECgf8NaLAyVJeZVhheb1ysZPofbVQlQNZP04yb/paPOYEKBKS6
+        a0w/z596+mHkzKvzfZX1wZ2hQkXeJEb9k8lJPbP9dauXWm+DrYav7MToIBKuqdBR
+        Z6Gb+BuaEyzdpESepgmbExwC4huiAu+I9VhBML0wrN8Jjp8e3c0bPU7UbcIk/Wyo
+        xKOEl8wHgO5EOQm3P84asVNmwSlSjghm2FPVFAzTyqe20B4hj11dGoka8K9iaNYB
+        2PYUtKNCngBiFs9AxM9VC1/MoIuuDzUPfOj0hV/ZogLbUz2jPRqk/a7/v8fjZThX
+        0Xo48CJo1fyDH245K8kI86GxgmUNYMTyEan43OUCgYEAziHSO5j5mEUkOnovOsJp
+        rgKFRLXCsNT0M9gLhdNtAhgMP6V3FkbUuV4dd0hcS+0kagO6uMU3PRoXe0f2rtYq
+        19yXOciaSTFU1AoN1/612a65Od5rujAOvijyj0lCBE3PEHkrEWWaLibSeeAEnHL+
+        wFMngGEX8u8zAhmPfWARcg0CgYEAtWmf44MkdtjtKr8evsI5tYdp/eTa4HGRhJiX
+        krzPaqP2c3/H4gM+h8rUUA5HE82uM8PF/cVPcZv9lUKuTfzd/QjTvpfjHJEc1PFv
+        XlklMDZa2AOlBdNkMJiuqI8bykNpI8iz5mOw0q7WD6JCyp6fgtJKLLQUGXmB0qaX
+        hZXiwbsCgYASiC/ic8pcyjqLl1iPq9LcdhWNK9opE7wwvQesLGnsekT/o9ylABE3
+        6SI1CyhhGxze+x7aZcClmabqynl/FnoblhVyeHqGggziU1UTSi8HNxIoBbshrhhl
+        OEE2aJuqz2QCUyJwGfZWl97sXhuMBTqqB8/RVulUSfUIB0xDNVPcMQKBgEXwTLX3
+        ry0qgHTEbeP5GSqE5DX/7uosnn9SHM1zgTuJrs/kaXkW6xqK9cNPXdOirhBC36fw
+        U6pnCyJqLKzgWezdZFTMVcCDqWvnEJp9H7swmWFCNnLChpO9qUhOs9YMmxIypDik
+        Il13DgvE8J8Q/EoBLJuDaWRQ1d4SX8QefudVAoGAJO957p5Ua6HBLrcj12my1ooC
+        ipbj05Ko6ARrscFBrvKHg6m6BRnbkqwunGrJBrGPOvOjeGRiUXNVxICu7A0klLuu
+        qss/POfYNhMIDNRQKBaHHiMCFJiQ1qUVrQtxMVj4mzVnlMo3zUCD5fgjh3NYV6aj
+        angC0PZdeLd94IHiwXw=
+        -----END PRIVATE KEY-----
+        -----BEGIN CERTIFICATE-----
+        MIIDazCCAlOgAwIBAgIURbRiE/IsF2zUuMSvLX3IQiLKDn4wDQYJKoZIhvcNAQEL
+        BQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoM
+        GEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAeFw0yMjEwMDQwODUyMDRaFw0yMzEw
+        MDQwODUyMDRaMEUxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEw
+        HwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQwggEiMA0GCSqGSIb3DQEB
+        AQUAA4IBDwAwggEKAoIBAQCSEvZBkMNQ7FPv/RGFhFzIfL9t1DyfvR/7B5kZMbae
+        MwKu+tZCjDmkgTqEtHUdAGbzYt4Ua+Cy0I8Owadc5KXr/EzPPDUGrr0rCmsaFZD3
+        rkEogiu6SSxZI7MZPV9xeYrw4anJc655IW1xOprUzujpR3olWOFBOxALVjc5C9qr
+        j+HEAvwZMdSI1QuSIEUa1KNN/taxRxpI4L1p3A+aGnaZmwTo+8aom2ECeNn0VNWm
+        EO6TCIovv4g2Is8vCSE7YKpsAEhggSe+JC0DD/RcjO1BwNtNN/ChLsHoyut7CbTU
+        gDFoaqEUoJevNQUhbOgdnlstePAGXgeiJUU2OIuUNBx/AgMBAAGjUzBRMB0GA1Ud
+        DgQWBBTABmLJFef9L86N2PHKZP0KlDID1TAfBgNVHSMEGDAWgBTABmLJFef9L86N
+        2PHKZP0KlDID1TAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBV
+        nugsPJA1IaTMnC+lpA3l+RIemjJdNpWSn3LPR6rhIierl0UukLPaHy97SAEDcCYq
+        5mnCLJmc9/mU/qed7TuL8maiWvqiv2j93iFWnoYBY14Q0bn7HWx9Oou1CJWz068o
+        jrjFcaIzRPTawHYjoCw0PvY9IWzR9w6xpOeKGVB7kp5dwBWpaGYi3+xH5gi9e5Xq
+        z8ZVYinV2K1sWTmIejYX4E33OfAxR1v2JlqFMbWUYGCBDvQgbKAx+47kP3hAoz6A
+        cC8y/fKklrDm8kZJXjErbogXIZKv2egeJ7htt0SzOObkUOFE9iE5ZczaxwTA7Dlh
+        yKr+Cynu9A3LxRZTH6r2
+        -----END CERTIFICATE-----
+    kind: ConfigMap
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: ldapdir
+      name: ldap-cert
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: ldapdir
+      name: ldapdir
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: ldapdir
+      strategy: {}
+      template:
+        metadata:
+          annotations:
+            kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+            kompose.version: 1.26.0 (40646f47)
+          creationTimestamp: null
+          labels:
+            io.kompose.service: ldapdir
+        spec:
+          containers:
+            - env:
+                - name: LDAP_ADMIN_PASSWORD
+                  value: adminpassword
+                - name: LDAP_ADMIN_USERNAME
+                  value: admin
+                - name: LDAP_ENABLE_TLS
+                  value: "yes"
+                - name: LDAP_PASSWORDS
+                  value: password1,password2
+                - name: LDAP_TLS_CA_FILE
+                  value: /opt/bitnami/openldap/certs/server.pem
+                - name: LDAP_TLS_CERT_FILE
+                  value: /opt/bitnami/openldap/certs/server.pem
+                - name: LDAP_TLS_KEY_FILE
+                  value: /opt/bitnami/openldap/certs/server.pem
+                - name: LDAP_USERS
+                  value: user01,user02
+              image: bitnami/openldap:latest
+              name: ldapdir
+              ports:
+                - containerPort: 1636
+              resources: {}
+              volumeMounts:
+                - mountPath: /opt/bitnami/openldap/certs/server.pem
+                  name: ldap-cert
+                  subPath: server.pem
+          restartPolicy: Always
+          volumes:
+            - configMap:
+                items:
+                  - key: server.pem
+                    path: server.pem
+                name: ldap-cert
+              name: ldap-cert
+    status: {}
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: mysql
+      name: mysql
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: mysql
+      strategy: {}
+      template:
+        metadata:
+          annotations:
+            kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+            kompose.version: 1.26.0 (40646f47)
+          creationTimestamp: null
+          labels:
+            io.kompose.service: mysql
+        spec:
+          containers:
+            - args:
+                - --character-set-server=utf8
+                - --collation-server=utf8_general_ci
+              env:
+                - name: MYSQL_DATABASE
+                  value: sakai
+                - name: MYSQL_PASSWORD
+                  value: examplepassword
+                - name: MYSQL_ROOT_PASSWORD
+                  value: examplerootpassword
+                - name: MYSQL_USER
+                  value: sakai
+              image: mysql:5.5
+              name: mysql
+              resources: {}
+          restartPolicy: Always
+    status: {}
+  - apiVersion: v1
+    data:
+      sakai.properties: |
+        ## MySQL settings
+        vendor@org.sakaiproject.db.api.SqlService=mysql
+        driverClassName@javax.sql.BaseDataSource=com.mysql.jdbc.Driver
+        hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+        url@javax.sql.BaseDataSource=jdbc:mysql://mysql:3306/sakai?useUnicode=true&characterEncoding=UTF-8
+        validationQuery@javax.sql.BaseDataSource=select 1 from DUAL
+        defaultTransactionIsolationString@javax.sql.BaseDataSource=TRANSACTION_READ_COMMITTED
+
+        ## LDAP settings
+        ldapHost@org.sakaiproject.user.api.UserDirectoryProvider=ldapdir
+        ldapPort@org.sakaiproject.user.api.UserDirectoryProvider=1636
+        secureConnection@org.sakaiproject.user.api.UserDirectoryProvider=true
+        searchScope@org.sakaiproject.user.api.UserDirectoryProvider=2
+        basePath@org.sakaiproject.user.api.UserDirectoryProvider=dc=example,dc=org
+        wrapFilter@org.sakaiproject.user.api.UserDirectoryProvider=(objectclass=posixAccount)
+    kind: ConfigMap
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sakai
+      name: sakai-config
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sakai
+      name: sakai
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: sakai
+      strategy: {}
+      template:
+        metadata:
+          annotations:
+            kompose.cmd: ./kompose convert -f docker-compose.yml -o sakaikustomization.yaml
+            kompose.version: 1.26.0 (40646f47)
+          creationTimestamp: null
+          labels:
+            io.kompose.service: sakai
+        spec:
+          containers:
+            - image: ghcr.io/sicudl/sakai-ldap:main
+              name: sakai
+              ports:
+                - containerPort: 8080
+              resources: {}
+              volumeMounts:
+                - mountPath: /usr/local/sakai/properties/sakai.properties
+                  name: sakai-config
+                  subPath: sakai.properties
+                - mountPath: /run/secrets/security.properties
+                  name: security-properties
+                  subPath: security.properties
+          restartPolicy: Always
+          volumes:
+            - configMap:
+                items:
+                  - key: sakai.properties
+                    path: sakai.properties
+                name: sakai-config
+              name: sakai-config
+            - name: security-properties
+              secret:
+                items:
+                  - key: security.properties
+                    path: security.properties
+                secretName: security-properties-secret
+    status: {}
+kind: List
+metadata: {}
+
