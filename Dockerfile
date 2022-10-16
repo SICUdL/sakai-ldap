@@ -1,6 +1,6 @@
 FROM maven:3.8.6-jdk-11 as build
 
-ARG release=master
+ARG release=22.0
 
 COPY lib/settings.xml /usr/share/maven/conf/settings.xml
 RUN mkdir /deploy
