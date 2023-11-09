@@ -25,6 +25,8 @@ services:
     configs:
       - source: sakai_config
         target: /usr/local/sakai/properties/sakai.properties
+      - source: saml_config
+        target: /usr/local/sakai/properties/autenticaciopreprod-metadata.xml
     secrets:
       - security.properties
 
@@ -44,5 +46,7 @@ secrets:
 configs:
   sakai_config:
     file: ./config/sakai.properties
+  saml_config:
+    file: ./config/autenticaciopreprod-metadata.xml
   ldap_cert:
     file: ./certs/server.pem

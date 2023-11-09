@@ -5,10 +5,28 @@ ARG release=22.0
 COPY lib/settings.xml /usr/share/maven/conf/settings.xml
 RUN mkdir /deploy
 WORKDIR /deploy
-RUN git clone https://github.com/sakaiproject/sakai.git
+#RUN git clone https://github.com/sakaiproject/sakai.git
+COPY sakai sakai
 WORKDIR /deploy/sakai
-RUN git checkout ${release}
-RUN sed -i 's|<!--  import resource="unboundid-ldap\.xml" / -->|<import resource="unboundid-ldap\.xml"/>|g' providers/component/src/webapp/WEB-INF/components.xml
+#RUN git checkout ${release}
+
+#Fet al codi
+#RUN sed -i 's|<!--  import resource="unboundid-ldap\.xml" / -->|<import resource="unboundid-ldap\.xml"/>|g' providers/component/src/webapp/WEB-INF/components.xml
+
+#Fet al codi
+# Canviar a sakai/login/login-tool/tool/src/webapp/WEB-INF/xlogin-context.saml.xml
+#  <property name="entityId" value="https://autenticaciopreprod.udl.cat/metadata/saml2"/>
+#
+# <property name="defaultIDP" value="http://idp.ssocircle.com"/>
+# per
+# <property name="defaultIDP" value="https://autenticaciopreprod.udl.cat/metadata/saml2"/>
+#
+# a sakai/login/login-tool/tool/src/webapp/WEB-INF/applicationContext.xml
+# descomentar
+# <!-- import resource="xlogin-context.saml.xml" / -->
+
+
+
 RUN mvn clean install sakai:deploy -Dmaven.test.skip=true
 
 

@@ -1,0 +1,79 @@
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://autenticaciopreprod.udl.cat/metadata/saml2">
+  <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:Extensions xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+      <shibmd:Scope xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" regexp="false">udl.cat</shibmd:Scope>
+      <mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+        <mdui:DisplayName xml:lang="ca">Universitat de Lleida</mdui:DisplayName>
+        <mdui:DisplayName xml:lang="es">Universidad de Lleida</mdui:DisplayName>
+        <mdui:DisplayName xml:lang="en">University of Lleida</mdui:DisplayName>
+        <mdui:Logo height="78" width="60">https://www.udl.cat/.galleries/imagenes-estructura/M-UdLlow.png</mdui:Logo>
+        <mdui:InformationURL xml:lang="ca">https://www.udl.cat/ca/udl/presentacio/</mdui:InformationURL>
+        <mdui:InformationURL xml:lang="es">https://www.udl.cat/ca/es/udl/presentation/</mdui:InformationURL>
+        <mdui:InformationURL xml:lang="en">https://www.udl.cat/ca/en/udl/presentation/</mdui:InformationURL>
+        <mdui:PrivacyStatementURL xml:lang="ca">http://www.udl.cat/ca/legal/</mdui:PrivacyStatementURL>
+        <mdui:PrivacyStatementURL xml:lang="es">https://www.udl.cat/ca/es/legal/</mdui:PrivacyStatementURL>
+        <mdui:PrivacyStatementURL xml:lang="en">https://www.udl.cat/ca/en/legal/</mdui:PrivacyStatementURL>
+      </mdui:UIInfo>
+    </md:Extensions>
+    <md:KeyDescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIFuDCCBKCgAwIBAgIJAMKl7XnDnvz/MA0GCSqGSIb3DQEBDQUAMIHnMQswCQYDVQQGEwJFUzEaMBgGA1UEDwwRR292ZXJubWVudCBFbnRpdHkxCzAJBgNVBAYTAkVTMQ4wDAYDVQQRDAUyNTAwNDEPMA0GA1UECAwGTGxlaWRhMQ8wDQYDVQQHDAZMbGVpZGExJTAjBgNVBAkMHFBsYXhDM3hBN2EgVmljdG9yIFNpdXJhbmEsIDExHjAcBgNVBAoMFVVuaXZlcnNpdGF0IGRlIExsZWlkYTEQMA4GA1UECwwHT3BJbmZyYTEkMCIGA1UEAwwbYXV0ZW50aWNhY2lvcHJlcHJvZC51ZGwuY2F0MB4XDTIyMDIxNTEwMTMyNFoXDTMyMDIxMzEwMTMyNFowgecxCzAJBgNVBAYTAkVTMRowGAYDVQQPDBFHb3Zlcm5tZW50IEVudGl0eTELMAkGA1UEBhMCRVMxDjAMBgNVBBEMBTI1MDA0MQ8wDQYDVQQIDAZMbGVpZGExDzANBgNVBAcMBkxsZWlkYTElMCMGA1UECQwcUGxheEMzeEE3YSBWaWN0b3IgU2l1cmFuYSwgMTEeMBwGA1UECgwVVW5pdmVyc2l0YXQgZGUgTGxlaWRhMRAwDgYDVQQLDAdPcEluZnJhMSQwIgYDVQQDDBthdXRlbnRpY2FjaW9wcmVwcm9kLnVkbC5jYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC/dSBE8/jOWgs9yMOSMVQjqNhV0/6qvpOI7McbcMME1mDgQlgBUsjSuLvEud8ba5wppceArSuGY+YcEU92y/3UUOQYr2cFf1ctRRPgm9JW5safr2MwE9yF5l+CuHrM6zMyVybfy1EC46jdI3mQTWW/5qTj05QrHCllHYNwNfp/5qpryzzYKwk9AHKLXmYN4XFt4Z8Ujxkm+LbOE6cFHzvc2iSrvOs6k9/41oaIUfvLcdA9cxydJLzHmKxJdiMz30h52+R4fpa1bDe06a5nktK4eRP8DGV/jdm0oyIkvUHX0piTNGRr4bNHuegf0YiiekYgWFAN1+gIT9Pv4NWMifKdAgMBAAGjggFjMIIBXzAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSZM5+dqD+X0wgKv3t2afYhVHu6ZDCCAR4GA1UdIwSCARUwggERgBSZM5+dqD+X0wgKv3t2afYhVHu6ZKGB7aSB6jCB5zELMAkGA1UEBhMCRVMxGjAYBgNVBA8MEUdvdmVybm1lbnQgRW50aXR5MQswCQYDVQQGEwJFUzEOMAwGA1UEEQwFMjUwMDQxDzANBgNVBAgMBkxsZWlkYTEPMA0GA1UEBwwGTGxlaWRhMSUwIwYDVQQJDBxQbGF4QzN4QTdhIFZpY3RvciBTaXVyYW5hLCAxMR4wHAYDVQQKDBVVbml2ZXJzaXRhdCBkZSBMbGVpZGExEDAOBgNVBAsMB09wSW5mcmExJDAiBgNVBAMMG2F1dGVudGljYWNpb3ByZXByb2QudWRsLmNhdIIJAMKl7XnDnvz/MA4GA1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQ0FAAOCAQEAK0PsU0mWMu6j6RC11WVUbwStQshy31v34OYeBro+3vmR6yFOM/xOG6SptfLC0guE3GM4y9FRVklODQDLAn5dcebhbCllXVCQepcMIZr1DLVSMzCh3KP7iSVBGoIqaVqgOsQZriFdfYTtpo7/ydTSVdjssCN1HUtPi6ZJzoDh7SYFA8vU+aUuuQf9U+ID4P9NLW7EdHA5blXxuuufJW12NgcQmVvMyFCk3bk1hdc0yQZxNtj1pcbz1RGOUSHvlqeJFtKswgkhGBRC7lhMI3nSLhuBRv1CT8aVQmJz8GNIfGmbgpnUPYd6zc0JK5YZqyec2mVaCBx2kN0uDHr54llbzA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIFuDCCBKCgAwIBAgIJAMKl7XnDnvz/MA0GCSqGSIb3DQEBDQUAMIHnMQswCQYDVQQGEwJFUzEaMBgGA1UEDwwRR292ZXJubWVudCBFbnRpdHkxCzAJBgNVBAYTAkVTMQ4wDAYDVQQRDAUyNTAwNDEPMA0GA1UECAwGTGxlaWRhMQ8wDQYDVQQHDAZMbGVpZGExJTAjBgNVBAkMHFBsYXhDM3hBN2EgVmljdG9yIFNpdXJhbmEsIDExHjAcBgNVBAoMFVVuaXZlcnNpdGF0IGRlIExsZWlkYTEQMA4GA1UECwwHT3BJbmZyYTEkMCIGA1UEAwwbYXV0ZW50aWNhY2lvcHJlcHJvZC51ZGwuY2F0MB4XDTIyMDIxNTEwMTMyNFoXDTMyMDIxMzEwMTMyNFowgecxCzAJBgNVBAYTAkVTMRowGAYDVQQPDBFHb3Zlcm5tZW50IEVudGl0eTELMAkGA1UEBhMCRVMxDjAMBgNVBBEMBTI1MDA0MQ8wDQYDVQQIDAZMbGVpZGExDzANBgNVBAcMBkxsZWlkYTElMCMGA1UECQwcUGxheEMzeEE3YSBWaWN0b3IgU2l1cmFuYSwgMTEeMBwGA1UECgwVVW5pdmVyc2l0YXQgZGUgTGxlaWRhMRAwDgYDVQQLDAdPcEluZnJhMSQwIgYDVQQDDBthdXRlbnRpY2FjaW9wcmVwcm9kLnVkbC5jYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC/dSBE8/jOWgs9yMOSMVQjqNhV0/6qvpOI7McbcMME1mDgQlgBUsjSuLvEud8ba5wppceArSuGY+YcEU92y/3UUOQYr2cFf1ctRRPgm9JW5safr2MwE9yF5l+CuHrM6zMyVybfy1EC46jdI3mQTWW/5qTj05QrHCllHYNwNfp/5qpryzzYKwk9AHKLXmYN4XFt4Z8Ujxkm+LbOE6cFHzvc2iSrvOs6k9/41oaIUfvLcdA9cxydJLzHmKxJdiMz30h52+R4fpa1bDe06a5nktK4eRP8DGV/jdm0oyIkvUHX0piTNGRr4bNHuegf0YiiekYgWFAN1+gIT9Pv4NWMifKdAgMBAAGjggFjMIIBXzAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSZM5+dqD+X0wgKv3t2afYhVHu6ZDCCAR4GA1UdIwSCARUwggERgBSZM5+dqD+X0wgKv3t2afYhVHu6ZKGB7aSB6jCB5zELMAkGA1UEBhMCRVMxGjAYBgNVBA8MEUdvdmVybm1lbnQgRW50aXR5MQswCQYDVQQGEwJFUzEOMAwGA1UEEQwFMjUwMDQxDzANBgNVBAgMBkxsZWlkYTEPMA0GA1UEBwwGTGxlaWRhMSUwIwYDVQQJDBxQbGF4QzN4QTdhIFZpY3RvciBTaXVyYW5hLCAxMR4wHAYDVQQKDBVVbml2ZXJzaXRhdCBkZSBMbGVpZGExEDAOBgNVBAsMB09wSW5mcmExJDAiBgNVBAMMG2F1dGVudGljYWNpb3ByZXByb2QudWRsLmNhdIIJAMKl7XnDnvz/MA4GA1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQ0FAAOCAQEAK0PsU0mWMu6j6RC11WVUbwStQshy31v34OYeBro+3vmR6yFOM/xOG6SptfLC0guE3GM4y9FRVklODQDLAn5dcebhbCllXVCQepcMIZr1DLVSMzCh3KP7iSVBGoIqaVqgOsQZriFdfYTtpo7/ydTSVdjssCN1HUtPi6ZJzoDh7SYFA8vU+aUuuQf9U+ID4P9NLW7EdHA5blXxuuufJW12NgcQmVvMyFCk3bk1hdc0yQZxNtj1pcbz1RGOUSHvlqeJFtKswgkhGBRC7lhMI3nSLhuBRv1CT8aVQmJz8GNIfGmbgpnUPYd6zc0JK5YZqyec2mVaCBx2kN0uDHr54llbzA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIFFDCCAvygAwIBAgIBBjANBgkqhkiG9w0BAQ0FADBHMRIwEAYKCZImiZPyLGQBGQwCZXMxFTATBgoJkiaJk/IsZAEZDAVwcmlzZTEaMBgGA1UEAwwRUFJpU0UgQ29kZVNpZ24gQ0EwHhcNMTcwNjA3MTU1NTIxWhcNMjcwNjA1MTU1NTIxWjCBozETMBEGCgmSJomT8ixkARkMA2NhdDETMBEGCgmSJomT8ixkARkMA3VkbDE4MDYGA1UECwwvw4ByZWEgZGUgU2lzdGVtZXMgZCdJbmZvcm1hY2nDsyBpIENvbXVuaWNhY2lvbnMxHjAcBgNVBAoMFVVuaXZlcnNpdGF0IGRlIExsZWlkYTEdMBsGA1UEAwwUYXV0ZW50aWNhY2lvLnVkbC5jYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2IAocAK/hO9vUjxwjbMIwXDZqqG7GVPc47g3tPy9g+ySHHAbGW2M6Sz9fH6l6qNdp4sSQnnlNtp5qaSecMdC0hIcxM9Cw4mk6ZWXCeL9x6MgQxX0ZMUtNk6glRUgiIwrY9+vymAV9c5BCDXxyTD5pxyCPbMFMaNEQXPeLIiWzU2SZqDF6JwmPC1a7xEWaeHJOwiG/N4jo3ZjEgAk4TbXVhP1xCh3qAlQtnStB9TRCq5zBisZ5WkZE412lyfwZ7dOe+6jX8dpqDfxEHCTG515auFSteDM3jwzcPbykEFmsMyAICQDz9fR9ddMwdqQNurUgZJD6BB+iw8e/T45m/JDhAgMBAAGjga0wgaowDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUB3wY6xjNr6/J16L+q27QL3poE5AwawYDVR0jBGQwYoAUJuPK3IjSNJwsSW1CIEyElpv2+WGhR6RFMEMxEjAQBgoJkiaJk/IsZAEZDAJlczEVMBMGCgmSJomT8ixkARkMBXByaXNlMRYwFAYDVQQDDA1QUmlTRSBSb290IENBggEAMA4GA1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQ0FAAOCAgEArfx9xvD7wxv9TBApDKkFzh0c1dLWcgB6dsy2KMEOHMcFc5oSn2O1X6hKoU5TK3XYk9UOHwp2NIH6ZSHRJfgVQ1XG7Lj0hlpd4A/+vkSg3n/3Ut3bExbEnF/PrCB2suVQyYOTTx/CcDLQvlRqt4sR99pv/YlGjmlmwsOQSOjYeZYJfZEjxAjIzWgPKwrBozCI9zGvnbMMABG6RaqK7isCtcA36o0D/TG2S5lJt33wHHgYfw5XnWLKrd5QNAJRJ5L1Nk3Oy7I1poV+JZ9b1I/ocVQndIrUkUjkmrtDcGItjVO8Ft42drAj0XMQb7h/w5MYW4eJjwgK62GUo7vhh7Q8OQUlh7wP7zxfG7ghbz13sfNE/Cyzl+sJgxXo6lx27bstMfYJA44ufokmhcOlPzFdsifTyTrP1BjWBmv6R+sZbjpejKEC6qL/4yJOhXsHNlhog/1oUmJ1rJiGToKxI53Lz7CFDFKyAejkNxD7WUc+vdrB+yZqRXViWRLWb8Fw4x5gbH0GNI6gJ3B4rAZKc/1Oq8Co1fHVJqDeg8QMhZuy1XU58bL3nx3vB4X7KsTTOWTfEqDyBXFYHBAeeA5vwrp8BV0xgNouLcNrvkR7z4fVYq3RhM2jZ4IfTTrrYvBydp/YJW6UyfQHQvMhxDn2iDKh9/Z5mXfkmIqa +KHoUVHzwJ0=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIFFDCCAvygAwIBAgIBBjANBgkqhkiG9w0BAQ0FADBHMRIwEAYKCZImiZPyLGQBGQwCZXMxFTATBgoJkiaJk/IsZAEZDAVwcmlzZTEaMBgGA1UEAwwRUFJpU0UgQ29kZVNpZ24gQ0EwHhcNMTcwNjA3MTU1NTIxWhcNMjcwNjA1MTU1NTIxWjCBozETMBEGCgmSJomT8ixkARkMA2NhdDETMBEGCgmSJomT8ixkARkMA3VkbDE4MDYGA1UECwwvw4ByZWEgZGUgU2lzdGVtZXMgZCdJbmZvcm1hY2nDsyBpIENvbXVuaWNhY2lvbnMxHjAcBgNVBAoMFVVuaXZlcnNpdGF0IGRlIExsZWlkYTEdMBsGA1UEAwwUYXV0ZW50aWNhY2lvLnVkbC5jYXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2IAocAK/hO9vUjxwjbMIwXDZqqG7GVPc47g3tPy9g+ySHHAbGW2M6Sz9fH6l6qNdp4sSQnnlNtp5qaSecMdC0hIcxM9Cw4mk6ZWXCeL9x6MgQxX0ZMUtNk6glRUgiIwrY9+vymAV9c5BCDXxyTD5pxyCPbMFMaNEQXPeLIiWzU2SZqDF6JwmPC1a7xEWaeHJOwiG/N4jo3ZjEgAk4TbXVhP1xCh3qAlQtnStB9TRCq5zBisZ5WkZE412lyfwZ7dOe+6jX8dpqDfxEHCTG515auFSteDM3jwzcPbykEFmsMyAICQDz9fR9ddMwdqQNurUgZJD6BB+iw8e/T45m/JDhAgMBAAGjga0wgaowDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUB3wY6xjNr6/J16L+q27QL3poE5AwawYDVR0jBGQwYoAUJuPK3IjSNJwsSW1CIEyElpv2+WGhR6RFMEMxEjAQBgoJkiaJk/IsZAEZDAJlczEVMBMGCgmSJomT8ixkARkMBXByaXNlMRYwFAYDVQQDDA1QUmlTRSBSb290IENBggEAMA4GA1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQ0FAAOCAgEArfx9xvD7wxv9TBApDKkFzh0c1dLWcgB6dsy2KMEOHMcFc5oSn2O1X6hKoU5TK3XYk9UOHwp2NIH6ZSHRJfgVQ1XG7Lj0hlpd4A/+vkSg3n/3Ut3bExbEnF/PrCB2suVQyYOTTx/CcDLQvlRqt4sR99pv/YlGjmlmwsOQSOjYeZYJfZEjxAjIzWgPKwrBozCI9zGvnbMMABG6RaqK7isCtcA36o0D/TG2S5lJt33wHHgYfw5XnWLKrd5QNAJRJ5L1Nk3Oy7I1poV+JZ9b1I/ocVQndIrUkUjkmrtDcGItjVO8Ft42drAj0XMQb7h/w5MYW4eJjwgK62GUo7vhh7Q8OQUlh7wP7zxfG7ghbz13sfNE/Cyzl+sJgxXo6lx27bstMfYJA44ufokmhcOlPzFdsifTyTrP1BjWBmv6R+sZbjpejKEC6qL/4yJOhXsHNlhog/1oUmJ1rJiGToKxI53Lz7CFDFKyAejkNxD7WUc+vdrB+yZqRXViWRLWb8Fw4x5gbH0GNI6gJ3B4rAZKc/1Oq8Co1fHVJqDeg8QMhZuy1XU58bL3nx3vB4X7KsTTOWTfEqDyBXFYHBAeeA5vwrp8BV0xgNouLcNrvkR7z4fVYq3RhM2jZ4IfTTrrYvBydp/YJW6UyfQHQvMhxDn2iDKh9/Z5mXfkmIqa +KHoUVHzwJ0=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://autenticaciopreprod.udl.cat/SAML2/SLOService.php"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://autenticaciopreprod.udl.cat/SAML2/SSOService.php"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://autenticaciopreprod.udl.cat/SAML2/SSOService.php"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://autenticaciopreprod.udl.cat/SAML2/ECPService.php"/>
+  </md:IDPSSODescriptor>
+  <md:Organization>
+    <md:OrganizationName xml:lang="ca">Universitat de Lleida</md:OrganizationName>
+    <md:OrganizationName xml:lang="es">Universidad de Lleida</md:OrganizationName>
+    <md:OrganizationName xml:lang="en">University of Lleida</md:OrganizationName>
+    <md:OrganizationDisplayName xml:lang="ca">Universitat de Lleida</md:OrganizationDisplayName>
+    <md:OrganizationDisplayName xml:lang="es">Universidad de Lleida</md:OrganizationDisplayName>
+    <md:OrganizationDisplayName xml:lang="en">University of Lleida</md:OrganizationDisplayName>
+    <md:OrganizationURL xml:lang="ca">https://www.udl.cat/ca/</md:OrganizationURL>
+    <md:OrganizationURL xml:lang="es">https://www.udl.cat/ca/es/</md:OrganizationURL>
+    <md:OrganizationURL xml:lang="en">https://www.udl.cat/ca/en/</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="administrative">
+    <md:GivenName>Gestió Economicoadministrativa d'Infraestructures i Tecnologia</md:GivenName>
+    <md:EmailAddress>gestioinfratec@udl.cat</md:EmailAddress>
+  </md:ContactPerson>
+  <md:ContactPerson contactType="billing">
+    <md:GivenName>Gestió Economicoadministrativa d'Infraestructures i Tecnologia</md:GivenName>
+    <md:EmailAddress>gestioinfratec@udl.cat</md:EmailAddress>
+  </md:ContactPerson>
+  <md:ContactPerson contactType="support">
+    <md:GivenName>Centre d'Atenció a l'Usuari (CAU-TIC)</md:GivenName>
+    <md:EmailAddress>sic.suport@udl.cat</md:EmailAddress>
+  </md:ContactPerson>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>Sistemes d'Informació i Comunicació</md:GivenName>
+    <md:EmailAddress>sic.suport@udl.cat</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>
