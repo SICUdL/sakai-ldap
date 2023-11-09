@@ -15,12 +15,25 @@ docker compose up
 # Descarregar dades del nostre IdP
 - Anar a Metadatos -> Metadatos propios -> SAML2
 - Copiar dades en un fitxer xml
-- Ficar el fitxer a una ubicació del tomcat
+- Ficar el fitxer a config/nomfitxer.xml
+- Aquest fitxer s'haurà de carregar com a volum al docker-compose a la ubicació en que calgui que sigui
+- La ubicació on cal ficar-lo s'indica al fitxer `xlogin-context.saml.xml`
 
 # Descomentar SAML a xlogin-content
-Al fitxer sakai/login/login-tool/tool/src/webapp/WEB-INF/applicationContext.xml descomentar línia  <!-- import resource="xlogin-context.saml.xml" / -->
+Al fitxer 
+`sakai/login/login-tool/tool/src/webapp/WEB-INF/applicationContext.xml`
 
-# Configurar IdP a sakai/login/login-tool/tool/src/webapp/WEB-INF/xlogin-context.saml.xml
+descomentar línia
+`<!-- import resource="xlogin-context.saml.xml" / -->`
+
+Deixant
+`< import resource="xlogin-context.saml.xml" />`
+
+# Configurar IdP
+Al fitxer
+
+`sakai/login/login-tool/tool/src/webapp/WEB-INF/xlogin-context.saml.xml`
+
 Canviar 
 ```
 <!-- Filter automatically generates default SP metadata -->
@@ -29,8 +42,18 @@ Canviar
 Ficar la nostra entitat a `<property name="entityId" ....`
 
 A un dels
-`<bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">` ficar el path al fitxer de metadades del nostre IdP
-`<constructor-arg value="/urs/local/tomcat/sakai/autenticaciopreprod-metadata.xml"/>`
+
+`<bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">`
+
+ficar el path al fitxer de metadades del nostre IdP
+
+`<constructor-arg value="/urs/local/sakai/properties/autenticaciopreprod-metadata.xml"/>`
+
+A on fica
+`<property name="defaultIDP" value="http://idp.ssocircle.com"/>`
+
+Ficar el nostre idP
+
 
 # Canviar sakai.properties
 ```
