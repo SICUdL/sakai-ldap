@@ -3,31 +3,22 @@ FROM maven:3.8.6-jdk-11 as build
 ARG release=22.0
 
 COPY lib/settings.xml /usr/share/maven/conf/settings.xml
-RUN mkdir /deploy
+
 WORKDIR /deploy
-#RUN git clone https://github.com/sakaiproject/sakai.git
-COPY sakai sakai
+RUN git clone https://github.com/sakaiproject/sakai.git
+
 WORKDIR /deploy/sakai
-#RUN git checkout ${release}
+RUN git checkout ${release}
 
-#Fet al codi
-#RUN sed -i 's|<!--  import resource="unboundid-ldap\.xml" / -->|<import resource="unboundid-ldap\.xml"/>|g' providers/component/src/webapp/WEB-INF/components.xml
-
-#Fet al codi
-# Canviar a sakai/login/login-tool/tool/src/webapp/WEB-INF/xlogin-context.saml.xml
-#  <property name="entityId" value="https://autenticaciopreprod.udl.cat/metadata/saml2"/>
-#
-# <property name="defaultIDP" value="http://idp.ssocircle.com"/>
-# per
-# <property name="defaultIDP" value="https://autenticaciopreprod.udl.cat/metadata/saml2"/>
-#
-# a sakai/login/login-tool/tool/src/webapp/WEB-INF/applicationContext.xml
-# descomentar
-# <!-- import resource="xlogin-context.saml.xml" / -->
-
-
-
+RUN sed -i 's|<!--  import resource="unboundid-ldap\.xml" / -->|<import resource="unboundid-ldap\.xml"/>|g' providers/component/src/webapp/WEB-INF/components.xml
 RUN mvn clean install sakai:deploy -Dmaven.test.skip=true
+
+COPY config/applicationContext.xml login/login-tool/tool/src/webapp/WEB-INF/applicationContext.xml
+COPY config/xlogin-context.saml.xml login/login-tool/tool/src/webapp/WEB-INF/xlogin-context.saml.xml
+
+WORKDIR /deploy/sakai/login
+RUN mvn clean install sakai:deploy -Dmaven.test.skip=true
+
 
 
 FROM tomcat:9.0.20-jre11
@@ -63,6 +54,7 @@ RUN sed -i '/^common.loader\=/ s/$/,"\$\{catalina.base\}\/sakai-lib\/*.jar"/' /u
 RUN curl -L -o /usr/local/tomcat/lib/mysql-connector-java-4.1.47.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar
 
 RUN keytool -import -trustcacerts -cacerts -storepass changeit -noprompt -file /usr/local/tomcat/server.der
+
 RUN mkdir -p /usr/local/tomcat/sakai
 COPY lib/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

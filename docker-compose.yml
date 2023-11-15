@@ -8,8 +8,8 @@ services:
     environment:
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
-      - LDAP_USERS=user01,user02
-      - LDAP_PASSWORDS=password1,password2
+      - LDAP_USERS=user01,user02,david
+      - LDAP_PASSWORDS=password1,password2,password1
       - LDAP_ENABLE_TLS=yes
       - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/server.pem
       - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/server.pem
